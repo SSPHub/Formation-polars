@@ -4,14 +4,12 @@ NOTEBOOK_NAME=$1
 WORK_DIR="/home/onyxia/work"
 CLONE_DIR="${WORK_DIR}/repo-git"
 
-COURSE_DIR="${CLONE_DIR}"
-
 # Clone course repository
 REPO_URL="https://github.com/SSPHub/Formation-polars.git"
 git clone --depth 1 $REPO_URL $CLONE_DIR
 
 # Put relevant notebook in formation dir
-cp "${COURSE_DIR}/${NOTEBOOK_NAME}.ipynb" "${WORK_DIR}"
+cp "${CLONE_DIR}/${NOTEBOOK_NAME}.ipynb" "${WORK_DIR}"
 
 # Remove useless repositories
 rm -rf $CLONE_DIR ${WORK_DIR}/lost+found
